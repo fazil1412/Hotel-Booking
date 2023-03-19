@@ -1,0 +1,80 @@
+.wrapper{
+    overflow: hidden;
+    
+}
+
+.Container{
+   margin-top: 1rem;
+   padding: 1rem 7%;
+}
+.contentCont{
+    line-height: 2rem;
+}
+.imgContainer{
+    margin-top: 2rem;
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 5px;
+
+  
+}
+img{
+    width: 30%;
+    height: 300px;
+}
+.exContainer{
+    width: 100%;
+    margin-top: 1.5rem;
+    /* margin-left: 3.5rem; */
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentEx{
+    width: 70%;
+}
+.contentEx > p{
+    margin-top: 1rem;
+}
+.contentEx > h1{
+   font-weight: bold;
+}
+.box{
+    width: 20%;
+    margin-left: 0.5rem;
+    background-color: #c1d5e7;
+    padding: 5px 13px;
+}
+.box>h3{
+    margin-top: 10px;
+    /* text-align: center; */
+}
+.box>p{
+    margin-top: 10px;
+    /* text-align: center; */
+}
+.box>h2{
+    margin-top: 10px;
+    /* text-align: center; */
+}
+.box button{
+    width: 90%;
+    height: 35px;
+    border-radius: 5px;
+    margin: 15px 20px;
+    cursor: pointer;
+    background-color: #3c7ed4;
+    outline: none;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+    /* text-align: center; */
+}
+.box button:hover{
+    background-color: transparent;
+    color: black;
+}
