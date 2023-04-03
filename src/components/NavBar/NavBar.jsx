@@ -23,7 +23,7 @@ function NavBar() {
                 </Link>
 
                  {
-                    user._id 
+                    user?._id 
                     &&
                     <div>
                         <span className="navButton">{user.userName}</span>
@@ -33,7 +33,7 @@ function NavBar() {
                  }
 
 
-{!user._id &&
+{!user?._id &&
      <div className="navItem">
      <Link to="/register" style={{ color: "inherit", textDecoration: "none" }}>
          <button className="navButton">Register</button>

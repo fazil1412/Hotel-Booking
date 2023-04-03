@@ -44,7 +44,7 @@ img{
    font-weight: bold;
 }
 .box{
-    width: 20%;
+    width: 25%;
     margin-left: 0.5rem;
     background-color: #c1d5e7;
     padding: 5px 13px;
@@ -77,4 +77,25 @@ img{
 .box button:hover{
     background-color: transparent;
     color: black;
+}
+.dates{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.to{
+    margin: 0 15px;
+}
+
+input[type="date"]{
+    background-color: #0080ff;
+    padding: 5px;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
 }

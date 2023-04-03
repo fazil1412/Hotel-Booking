@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useReducer, useState } from "react";
 import {Reducer} from  "../Reducers/useReducer"
 
@@ -8,8 +9,26 @@ export const AppProvider = ({children}) => {
     const initialState = {
         user:[]
     };
-    
-let name = "Zaid";
+
+    const [fromDate,setFromDate] = useState("")
+ const [toDate,setToDate] = useState("")
+    const [data, setData] = useState([]);
+
+    const getData = () => {
+        axios
+          .get("http://localhost:5000/hotel/gethotels")
+          .then((res) => {
+            console.log("All Hotels: ", res.data);
+            setData(res.data.hotels);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+
+    useEffect( () => {
+      getData()
+    },[])
     let userInfo = JSON.parse(localStorage.getItem("user"));
     const [state,dispatch] = useReducer(Reducer,userInfo);
     
@@ -17,7 +36,7 @@ let name = "Zaid";
         localStorage.setItem("user",JSON.stringify(state))
     },[state])
     
-    return <AppContext.Provider value={{...state,dispatch,name}}>
+    return <AppContext.Provider value={{...state,dispatch,data,setFromDate,setToDate,toDate,fromDate}}>
         {children}
     </AppContext.Provider>
 }

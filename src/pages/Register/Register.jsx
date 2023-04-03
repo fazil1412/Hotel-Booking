@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import './Register.css';
+import { Link, useNavigate } from "react-router-dom";
+import "./Register.css";
 
 
 
@@ -36,37 +36,51 @@ const Register = () => {
   }
 
   return (
-    <div className="login">
-      <div className="lContainer">
-        <h1 className="heading">Register Form</h1>
+    <div className='formCont'>
+          <div className='form-cont'>
+          <h3 className='Title'>SignUp</h3>
+           
+           <div className='input_field'>
+           <label className='label'> Name</label><br/>
+           <input type="text" name="name" value={name} onChange={ (e) => setName(e.target.value)} className='inputUser' placeholder="First Name"/>
+           </div>
+                
+           <div className='input_field'>
+           <label className='label'>UserName</label><br/>
+           <input type="text"name="userName" value={userName} onChange={(e) => setUserName(e.target.value)}  className='inputUser' placeholder="Last Name"/>
+           </div>
+          
+           <div className='input_field'>
+          <label className='label'>Password</label><br/>
+           <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className='inputUser' placeholder="Email"/>
+           </div>
+             
+           <div className='input_field'>
+           <label className='label'>Confirm Password</label><br/>
+           <input type="text" name="cPassword" value={cPassword} onChange={(e) => setCpassword(e.target.value)}  className='inputUser' placeholder="+91 1234 5678 90"/>
+           </div>
+                  
+           <div className='input_field'>
+           <label className='label'>phone</label><br/>
+           <input type="number" name="phone" value={phone} onChange={(e) =>setPhone(e.target.value)}  className='inputUser' placeholder="+91 7894 5612 20"/>
+           </div>
+           
+           <div className='input_field'>
+           <label className='label'>City</label><br/>
+           <input type="text" name="city" value={city} onChange={(e) => setCity(e.target.value)} className='inputUser' placeholder="City"/>
+           </div>
 
+           <div className='input_field'>
+           <label className='label'>Email</label><br/>
+           <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className='inputUser' placeholder="City"/>
+           </div>
 
+           <input type="button" className='buttonbtn' value="Sign Up" onClick={handleClick}/>
+           <p>Already Have an account  <Link to="/login">Sign in</Link></p>
+       
+          </div>
 
-        <input type="text" placeholder="Enter Name" id="username" onChange={(e)=>setName(e.target.value)} className="lInput" required />
-        <input type="text" placeholder="username" id="username" onChange={(e)=>setUserName(e.target.value)} className="lInput" required />
-
-        <input type="email" placeholder="Email" id="email" onChange={(e)=>setEmail(e.target.value)} className="lInput" required />
-
-        {/* <input type="text" placeholder="country" id="country" onChange={()=>} className="lInput" required /> */}
-
-        <input type="text" placeholder="city" id="city" onChange={(e)=>setCity(e.target.value)} className="lInput" required />
-
-        <input type="text" placeholder="phone" id="phone" onChange={(e)=>setPhone(e.target.value)} className="lInput" required />
-
-        <input type="password" placeholder="password" id="password" onChange={(e)=>setPassword(e.target.value)} className="lInput" required />
-        <input type="text" placeholder="Confirm password" id="password" onChange={(e)=>setCpassword(e.target.value)} className="lInput" required />
-
-        <button onClick={handleClick} className="lButton">
-          Resgister
-        </button>
-
-
-      </div>
-      <div className="errorMsg">
-        {/* {error && <span>{error.message}</span>} */}
-      </div>
-
-    </div>
+        </div>
   );
 };
 

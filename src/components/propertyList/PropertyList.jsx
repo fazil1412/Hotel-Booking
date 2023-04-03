@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import useFetch from '../../hooks/useFetch';
 import './propertyList.css'
+import { AppContext } from './../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 const PropertyList = () => {
-    const { data, loading, error } = useFetch("/hotels/countByType")
-    // console.log(data);
+    const {data} = useContext(AppContext);
+    const navigate = useNavigate()
 
     const images = [
         "https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg",
@@ -17,11 +21,11 @@ const PropertyList = () => {
 
     return (
         <div className="pList">
-                            <div className="pListItem">
+                            <div className="pListItem" onClick={()=>navigate("/allhotels")}>
                                 <img src={images[0]} alt="image1" className="pListImg" />
                                 <div className="pListTitles">
                                     <h1>Hotels</h1>
-                                    <h3>3 Hotels</h3>
+                                    <h3>{data.length} Hotels</h3>
                                 </div>
                             </div>
                             <div className="pListItem">

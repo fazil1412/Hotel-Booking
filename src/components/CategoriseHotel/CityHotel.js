@@ -30,7 +30,6 @@ const CityHotel = () => {
   return (
     <>
       <NavBar />
-      {/* <Header/> */}
       <div className="hotelContainerr">
         {data.map((hotel) => {
           return (
@@ -38,7 +37,7 @@ const CityHotel = () => {
               <div className="hotel">
                 <div className="image">
                   <img
-                    src="http://island.lk/wp-content/uploads/2022/09/Lotus_Tower.png"
+                    src={hotel.photos[0]}
                     className="img"
                     alt="hotelImg"
                   />
@@ -49,11 +48,11 @@ const CityHotel = () => {
                     <p>Distance</p>
                     <h3 style={{ color: "green" }}>Free Airport Taxi</h3>
                     <h3>Apartment with Ac</h3>
-                    <span style={{ fontWeight: "bold" }}>Type:{hotel.type}</span>{" "}
+                    <span style={{ fontWeight: "bold" }}>Type:{hotel.type}</span>
                     <p>Villa</p>
                     <h1 style={{ color: "green" }}>Free Cancellation</h1>
                     <p style={{ color: "green" }}>
-                      Tou can cancel later, so lock in this great price today
+                      You can cancel later, so lock in this great price today
                     </p>
                   </div>
                   <div className="priceContainer">

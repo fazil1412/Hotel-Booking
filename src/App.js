@@ -9,6 +9,9 @@ import CityHotel from './components/CategoriseHotel/CityHotel';
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from './context/AuthContext';
 import AuthenticateUser from "./components/AuthenticateUser/AuthenticateUser";
+import AllHotels from "./components/AllHotels/AllHotels";
+import Room from "./components/Rooms/Room";
+import BookedRoom from "./components/Booked/BookedRoom";
 
 function App() {
 
@@ -24,6 +27,9 @@ function App() {
           <Route path="/register" element={<Register/>} />
           <Route path="/hotel/:id" element={<Hotel/>} />
           <Route path="/city/:city" element={<CityHotel/>} />
+          <Route path="allhotels" element={<AllHotels/>} />
+          <Route path="room/:hotelId" element={<Room/>} />
+          <Route path="bookedroom/:hotelId/:roomId" element={<BookedRoom/>} />
         </Routes>
       </BrowserRouter>
     </div>
