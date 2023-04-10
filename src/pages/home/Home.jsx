@@ -15,6 +15,7 @@ function home() {
       <NavBar />
       <Header />
 
+        {/* <h1 style={{marginLeft:"7rem",paddingTop:"1rem"}} >Our featured City</h1> */}
       <div className="homeContainer">
         <Featured />
         

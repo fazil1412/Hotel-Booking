@@ -35,7 +35,19 @@ useEffect( () => {
 },[])
 
 const BookHotel = (id) => {
-  navigate(`/room/${id}`);
+  console.log(fromDate,toDate)
+  if(fromDate==="" && toDate===""){
+    alert("Please Enter checkIn and CheckOut Date")
+  }
+  else{
+    if(user._id){
+      navigate(`/room/${id}`);
+    }
+    else{
+      navigate("/login")
+    }
+  }
+ 
 }
 
   return (
@@ -74,15 +86,15 @@ const BookHotel = (id) => {
          
          <div className='box'>
           <div className='dates'>
-          <input type='date' className='fromdate'  onChange={(e)=>setFromDate(e.target.value)}/>
+          <input type='date' className='fromdate' value={fromDate}  onChange={(e)=>setFromDate(e.target.value)}/>
            <span className='to'>To</span>
-           <input type='date' className='todate' onChange={(e)=>setToDate(e.target.value)}/>
+           <input type='date' className='todate' value={toDate} onChange={(e)=>setToDate(e.target.value)}/>
 
           </div>
           <h3>Perfect for a 2 night stay</h3>
           <p>{data.desc}</p>
           <h2>{data.price * 2 } for <span>(2 nights)</span></h2>
-          <button onClick={()=>BookHotel(data._id)} style={{cursor:fromDate && toDate ? "pointer" : "not-allowed"}} disabled={fromDate && toDate ? false : true}> Book Now</button>
+          <button onClick={()=>BookHotel(data._id)}  > Book Now</button>
          </div>
           </div>
       

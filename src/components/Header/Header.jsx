@@ -96,6 +96,11 @@ function Header({ type }) {
                         <span>Resorts</span>
                     </div>
 
+                    <div className="headerListItem" onClick={() => navigate("/listbrooms")}>
+                        <FontAwesomeIcon icon={faTaxi}  />
+                        <span>Bookings</span>
+                    </div>
+
                 </div>
 
                 {type !== "list" &&

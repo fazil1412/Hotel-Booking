@@ -23,6 +23,9 @@ const Featured = () => {
     handleClick();
   }, []);
   return (
+    <>
+    
+      <h1 style={{textAlign:"start"}}>Our featured City</h1>
     <div className="featured">
       <div
         className="featuredItem"
@@ -68,7 +71,23 @@ const Featured = () => {
           <h3>3 Properties</h3>
         </div>
       </div>
+
+      <div
+        className="featuredItem"
+        onClick={() => navigate(`/city/${"Delhi"}`)}
+      >
+        <img
+          src="https://media.istockphoto.com/id/510795912/photo/india-gate.jpg?b=1&s=170667a&w=0&k=20&c=Nts8vpG6WNkm8s3GSY-8LGmRGpwmzzJtowWLmSRvVks="
+          alt="Image3"
+          className="featuredImg"
+        />
+        <div className="featuredTitles">
+          <h1>Delhi</h1>
+          <h3>3 Properties</h3>
+        </div>
+      </div>
     </div>
+    </>
   );
 };
 

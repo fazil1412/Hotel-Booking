@@ -12,6 +12,7 @@ import AuthenticateUser from "./components/AuthenticateUser/AuthenticateUser";
 import AllHotels from "./components/AllHotels/AllHotels";
 import Room from "./components/Rooms/Room";
 import BookedRoom from "./components/Booked/BookedRoom";
+import ListBookedRoom from "./components/ListBookedRoom/ListBookedRoom";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="allhotels" element={<AllHotels/>} />
           <Route path="room/:hotelId" element={<Room/>} />
           <Route path="bookedroom/:hotelId/:roomId" element={<BookedRoom/>} />
+          <Route path="/listbrooms" element={<ListBookedRoom/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -8,6 +8,7 @@ import axios from "axios";
 const CityHotel = () => {
   const { city } = useParams();
   const [data, setData] = useState([]);
+  const [loading ,setLoading] = useState(true)
   const navigate = useNavigate()
 
   const getData = () => {
@@ -19,6 +20,7 @@ const CityHotel = () => {
         });
         console.log("FilteredData: ", getFilteredData);
         setData(getFilteredData);
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err);
@@ -27,6 +29,14 @@ const CityHotel = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  if(loading){
+      return(
+    <div style={{height:"100vh", display:"flex",justifyContent:"center",alignItems:"center"}}>
+      <h1 style={{textAlign:"center", fontSize:"50px"}}>Loading...</h1>
+    </div>
+      ) 
+  }
   return (
     <>
       <NavBar />

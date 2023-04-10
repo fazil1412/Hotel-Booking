@@ -76,7 +76,7 @@ const Register = () => {
            </div>
 
            <input type="button" className='buttonbtn' value="Sign Up" onClick={handleClick}/>
-           <p>Already Have an account  <Link to="/login">Sign in</Link></p>
+           <p className="bottomSec">Already Have an account  <Link to="/login">Sign in</Link></p>
        
           </div>
 

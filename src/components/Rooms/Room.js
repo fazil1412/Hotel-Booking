@@ -32,7 +32,6 @@ const Room = () => {
   }, []);
 
   const handleChange = (id) => {
-    setRoomNo(!roomNo);
     setRoomId(id);
   };
 
@@ -64,13 +63,17 @@ const Room = () => {
           <h2>Loading...</h2>
         ) : (
           <div className="roomContainer">
-            <h3 style={{ marginBottom: "1rem" }}>Select Your Rooms</h3>
+            <h3 style={{ marginBottom: "1rem",color:"red" }}>
+              {data.rooms?.length === 0
+                ? "No rooms Available for these hotel"
+                : "Select Your Rooms"}
+            </h3>
             {data.rooms?.map((room) => {
               return (
                 <>
                   <div className="roomBox" key={room._id}>
                     <div className="roomContent">
-                      <h4>{room.name}</h4>
+                      <h4>{room.title}</h4>
                       <p>{room.desc}</p>
                       <p style={{ fontWeight: "700" }}>
                         Max people :
@@ -78,42 +81,34 @@ const Room = () => {
                           {room.maxPeople}
                         </span>
                       </p>
-                      <h4>${room.price}</h4>
+                      {/* <h4>${room.}</h4> */}
                     </div>
 
                     <div className="checkboxes">
-                      {room.roomNumbers?.map((rooms) => {
-                        return (
-                          <>
-                            <label>{rooms}</label>
-                            <input
-                              type="checkbox"
-                              value={rooms}
-                              style={{
-                                cursor: room.isBooked
-                                  ? "not-allowed"
-                                  : "pointer",
-                              }}
-                              onClick={() => handleChange(room._id)}
-                              disabled={room.isBooked ? true : false}
-                            />
-                          </>
-                        );
-                      })}
+                      <input
+                        type="checkbox"
+                        disabled={room.isBooked ? true : false}
+                        style={{cursor:room.isBooked ?"not-allowed" :"pointer"}}
+                        onChange={() => handleChange(room._id)}
+                      />
                     </div>
                   </div>
                 </>
               );
             })}
 
-            <button
-              className="btn_reserve"
-              onClick={() => bookHotel()}
-              style={{ cursor: roomNo ? "pointer" : "not-allowed" }}
-              disabled={!roomNo ? true : false}
-            >
-              Reserve Now
-            </button>
+            {data.rooms?.length === 0 ? (
+              <p></p>
+            ) : (
+              <button
+                className="btn_reserve"
+                onClick={() => bookHotel()}
+
+                // disabled={!roomNo || data.rooms?.length===0  ? true : false}
+              >
+                Reserve Now
+              </button>
+            )}
           </div>
         )}
       </div>
