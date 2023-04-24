@@ -4,12 +4,16 @@ import NavBar from "../NavBar/NavBar";
 import "./City.css";
 import Header from "./../Header/Header";
 import axios from "axios";
+import { ThreeCircles } from  'react-loader-spinner'
+import { useContext } from "react";
+import { AppContext } from "../../context/AuthContext";
 
 const CityHotel = () => {
   const { city } = useParams();
   const [data, setData] = useState([]);
   const [loading ,setLoading] = useState(true)
   const navigate = useNavigate()
+  // const {loading,setLoading} = useContext(AppContext)
 
   const getData = () => {
     axios
@@ -31,11 +35,20 @@ const CityHotel = () => {
   }, []);
 
   if(loading){
-      return(
-    <div style={{height:"100vh", display:"flex",justifyContent:"center",alignItems:"center"}}>
-      <h1 style={{textAlign:"center", fontSize:"50px"}}>Loading...</h1>
-    </div>
-      ) 
+    return (
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh"}}>
+    <ThreeCircles
+    height="150"
+    width="150"
+    color="#4fa94d"
+    wrapperStyle={{}}
+    wrapperClass=""
+    visible={true}
+    ariaLabel="three-circles-rotating"
+    outerCircleColor=""
+    innerCircleColor=""
+    middleCircleColor=""
+  /></div>)
   }
   return (
     <>

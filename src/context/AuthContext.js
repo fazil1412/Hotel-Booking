@@ -9,6 +9,7 @@ export const AppProvider = ({children}) => {
     const initialState = {
         user:[]
     };
+    const [loading,setLoading] = useState(true)
 
     const [fromDate,setFromDate] = useState("")
  const [toDate,setToDate] = useState("")
@@ -20,6 +21,7 @@ export const AppProvider = ({children}) => {
           .then((res) => {
             console.log("All Hotels: ", res.data);
             setData(res.data.hotels);
+            setLoading(false)
           })
           .catch((err) => {
             console.log(err);
@@ -36,7 +38,7 @@ export const AppProvider = ({children}) => {
         localStorage.setItem("user",JSON.stringify(state))
     },[state])
     
-    return <AppContext.Provider value={{...state,dispatch,data,setFromDate,setToDate,toDate,fromDate}}>
+    return <AppContext.Provider value={{...state,dispatch,data,setFromDate,setToDate,toDate,fromDate,loading,setLoading}}>
         {children}
     </AppContext.Provider>
 }

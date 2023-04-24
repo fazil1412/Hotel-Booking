@@ -3,17 +3,34 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import NavBar from './../NavBar/NavBar';
 import { AppContext } from './../../context/AuthContext';
-
+import { ThreeCircles } from  'react-loader-spinner'
 
 const AllHotels = () => {
-  const {data} = useContext(AppContext)
+  const {data,loading} = useContext(AppContext)
   const navigate = useNavigate();
   
+  if(loading) {
+    return (
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh"}}>
+    <ThreeCircles
+    height="150"
+    width="150"
+    color="#4fa94d"
+    wrapperStyle={{}}
+    wrapperClass=""
+    visible={true}
+    ariaLabel="three-circles-rotating"
+    outerCircleColor=""
+    innerCircleColor=""
+    middleCircleColor=""
+  /></div>)
+  }
   return (
     <>
     <NavBar />
     {/* <Header/> */}
     <div className="hotelContainerr">
+    
       {data?.map((hotel) => {
         return (
           <div key={hotel._id}>
@@ -48,6 +65,8 @@ const AllHotels = () => {
           </div>
         );
       })}
+      
+
     </div>
   </>
   )

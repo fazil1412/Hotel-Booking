@@ -1,6 +1,6 @@
 .featured{
-    /* width: 100%;
-    max-width: 1024px; */
+ 
+    margin: 0 3rem;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -29,3 +29,21 @@
     bottom: 20px;
     left: 20px;
 }
+
+@media screen and (max-width:1100px) {
+    .featured {
+       padding:0 1.5rem;
+    }
+  }
+@media screen and (max-width:900px) {
+    .featured {
+     display: flex;
+     /* flex-wrap: wrap; */
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+    }
+    .featuredItem{
+        width: 100%;
+    }
+  }

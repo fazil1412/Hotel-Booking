@@ -46,3 +46,20 @@
 .FeaturedPropertiesRating>span{
     font-size: 14px;
 }
+
+@media screen and (max-width:700px){
+    .FeaturedProperties{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 3rem;
+        /* border: 1px solid black; */
+
+    }
+    .FeaturedPropertiesItem{
+        width: 80%;
+    }
+
+}

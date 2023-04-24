@@ -11,6 +11,7 @@ import useFetch from '../../hooks/useFetch'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { ThreeCircles } from  'react-loader-spinner'
 import { AppContext } from './../../context/AuthContext';
 import Room from '../../components/Rooms/Room'
 
@@ -19,7 +20,9 @@ function Hotel() {
   const {user} = useContext(AppContext);
   const navigate = useNavigate()
 const {id} = useParams();
+const {loading,setLoading} = useState(true)
 const {setFromDate,setToDate,fromDate,toDate} = useContext(AppContext)
+
 
 const getHotelById = () => {
   axios.get(`http://localhost:5000/hotel/gethotel/${id}`)
@@ -48,6 +51,21 @@ const BookHotel = (id) => {
     }
   }
  
+}
+
+if(loading){
+  return (
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh"}}>
+  <ThreeCircles
+  height="150"
+  width="150"
+  color="#4fa94d"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  ariaLabel="three-circles-rotating"
+  
+/></div>)
 }
 
   return (
