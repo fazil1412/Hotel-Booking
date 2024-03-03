@@ -28,7 +28,7 @@ const BookedRoom = () => {
       <NavBar />
       <h1 style={{ textAlign: "center", marginTop: "1rem",color:data.length <=0 ? "red" : "" }}>{data.length <=0 ? "No Bookings Yet!" : "Your bookings"}</h1>
       <div className="bookedContainer">
-        {data.map((info) => {
+        {data.map((info,i) => {
           return (
             <div className="bookings">
               <h3>BookingId : {info._id}</h3>
@@ -38,7 +38,7 @@ const BookedRoom = () => {
               {/* moment("2021-07-14T00:00:00.000Z").utc().format('YYYY-MM-DD') */}
               <h3>CheckIn : {moment(info.checkIn).utc().format('DD-MM-YYYY')}</h3>
               <h3>CheckOut: {moment(info.checkOut).utc().format('DD-MM-YYYY')}</h3>
-              <h3>Room No :{}</h3>
+              {/* <h3>Room No :{info.room.roomNumbers[i]}</h3> */}
               <h3>Price :{info.price} </h3>
               <h3>Payment :Cash On Delivery </h3>
               <button style={{float:"right",padding:"8px 15px",borderRadius:"5px",outline:"none",cursor:"pointer",backgroundColor:"#EAB543",border:"1px solid #182C61"}}>Cancel Booking</button>

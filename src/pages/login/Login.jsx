@@ -16,6 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
+    console.log(userName,password)
     axios
       .post("http://localhost:5000/api/userlogin", {
         userName,
@@ -24,7 +25,8 @@ const Login = () => {
       .then((res) => {
         dispatch({ type: "LOGIN", payload: res.data.user });
         if (res.data.error) {
-          return setError(res.data.error);
+          // return setError(res.data.error);
+          console.log(res.data.error)
         }
         navigate("/");
         console.log(res.data);
@@ -60,7 +62,7 @@ const Login = () => {
             type="button"
             className="button"
             value="Login"
-            onClick={handleClick}
+            onClick={() => handleClick()}
           />
           <p style={{padding:"0.5rem 0 "}}>
             New Accont <Link to="/register">Sign Up</Link>

@@ -38,7 +38,7 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>Mumbai</h1>
-          <h3>3 Properties</h3>
+          {/* <h3>3 Properties</h3> */}
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>Hyderabad</h1>
-          <h3>3 Properties</h3>
+          {/* <h3>3 Properties</h3> */}
         </div>
       </div>
 
@@ -68,7 +68,7 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>Banglore</h1>
-          <h3>3 Properties</h3>
+          {/* <h3>3 Properties</h3> */}
         </div>
       </div>
 
@@ -83,7 +83,7 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>Delhi</h1>
-          <h3>3 Properties</h3>
+          {/* <h3>3 Properties</h3> */}
         </div>
       </div>
     </div>

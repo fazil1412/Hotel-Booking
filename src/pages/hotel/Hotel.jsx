@@ -43,10 +43,11 @@ const BookHotel = (id) => {
     alert("Please Enter checkIn and CheckOut Date")
   }
   else{
-    if(user._id){
+    if(user?._id){
       navigate(`/room/${id}`);
     }
     else{
+      alert("Please Login")
       navigate("/login")
     }
   }

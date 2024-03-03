@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import './header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBed, faCalendarDays,faHotel ,faCar, faPerson, faPlane, faTaxi,faHouseBuilding } from '@fortawesome/free-solid-svg-icons'
+import { faBed, faCalendarDays,faHotel ,faCar, faPerson, faPlane, faTaxi,faHouseBuilding,faBriefcase } from '@fortawesome/free-solid-svg-icons'
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
@@ -97,7 +97,7 @@ function Header({ type }) {
                     </div>
 
                     <div className="headerListItem" onClick={() => navigate("/listbrooms")}>
-                        <FontAwesomeIcon icon={faTaxi}  />
+                    <FontAwesomeIcon icon={faBriefcase} />
                         <span>Bookings</span>
                     </div>
 

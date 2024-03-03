@@ -36,18 +36,18 @@ const Room = () => {
   };
 
   const bookHotel = () => {
-    navigate(`/bookedroom/${hotelId}/${roomId}`);
     axios
-      .post(`http://localhost:5000/booked/bookedroom`, {
-        user: user._id,
-        hotel: hotelId,
-        room: roomId,
-        price: data.price,
-        checkIn: fromDate,
-        checkOut: toDate,
-      })
-      .then((res) => {
-        console.log(res.data);
+    .post(`http://localhost:5000/booked/bookedroom`, {
+      user: user._id,
+      hotel: hotelId,
+      room: roomId,
+      price: data.price,
+      checkIn: fromDate,
+      checkOut: toDate,
+    })
+    .then((res) => {
+      console.log(res.data);
+      navigate(`/bookedroom/${hotelId}/${roomId}`);
       })
       .catch((err) => {
         console.log(err);
