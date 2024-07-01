@@ -6,7 +6,7 @@ import {Reducer} from  "../Reducers/useReducer"
 export const AppContext = React.createContext({});
 
 export const AppProvider = ({children}) => {
-    const initialState = {
+    const initialState = {  
         user:[] 
     };
     const [loading,setLoading] = useState(true)
