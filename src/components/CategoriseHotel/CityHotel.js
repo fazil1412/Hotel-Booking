@@ -13,7 +13,8 @@ const CityHotel = () => {
   const [data, setData] = useState([]);
   const [loading ,setLoading] = useState(true)
   const navigate = useNavigate()
-  // const {loading,setLoading} = useContext(AppContext)
+  // const {loading,setLoading} = useContext(AppContext);
+  const [lauda,setLauda] = useState("")
 
   const getData = () => {
     axios
