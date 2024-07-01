@@ -7,7 +7,7 @@ export const AppContext = React.createContext({});
 
 export const AppProvider = ({children}) => {
     const initialState = {
-        user:[]
+        user:[] 
     };
     const [loading,setLoading] = useState(true)
 
